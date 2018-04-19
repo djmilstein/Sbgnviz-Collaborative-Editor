@@ -223,7 +223,12 @@ class TripsGeneralInterfaceModule extends TripsInterfaceModule {
     }
 
     sendModelToTrips(biopaxModel){
+        start_msg = '(REQUEST :CONTENT (BUILD-MODEL :DESCRIPTION "'
+        middle_msg = biopaxModel.replace('"', "\\" + '"')
+        end_msg = '") :REPLY-WITH BUILD-MODEL-307 :sender SBGNVIZ)'
+        kqml_message = start_msg + middle_msg + end_msg
 
+        this.tripsModule.sendMsg(kqml_message)
     }
 
 
