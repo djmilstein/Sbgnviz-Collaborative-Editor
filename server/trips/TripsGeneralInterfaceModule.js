@@ -222,16 +222,16 @@ class TripsGeneralInterfaceModule extends TripsInterfaceModule {
     }
 
     sendModelToTrips(biopaxModel){
-        /*console.log('KQML MESSAGE MOO:')
-        start_msg = '(REQUEST :CONTENT (REPLACE-MODEL :DESCRIPTION "'
-        middle_msg = biopaxModel.replace('"', "\\" + '"')
-        end_msg = '") :sender SBGNVIZ)'
-        kqml_message = start_msg + middle_msg + end_msg*/
+        var start_msg = '(REQUEST :CONTENT (REPLACE-MODEL :DESCRIPTION "'
+        var middle_msg = biopaxModel.replace(/"/g, "\\" + '"')
+        var end_msg = '") )'
+        var kqml_message = start_msg + middle_msg + end_msg
 
-		//fs.appendFile('sb_log.txt', 'MOO there', (err) => {
+        //fs = require('fs')
+		//fs.appendFile('sb_log.txt', kqml_message, (err) => {
 		//});
 
-        //this.tripsModule.sendMsg(kqml_message)
+        this.tm.sendMsg(kqml_message)
     }
 
 
