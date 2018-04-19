@@ -222,14 +222,14 @@ class TripsGeneralInterfaceModule extends TripsInterfaceModule {
     }
 
     sendModelToTrips(biopaxModel){
-        console.log('KQML MESSAGE MOO:')
+        /*console.log('KQML MESSAGE MOO:')
         start_msg = '(REQUEST :CONTENT (REPLACE-MODEL :DESCRIPTION "'
         middle_msg = biopaxModel.replace('"', "\\" + '"')
         end_msg = '") :sender SBGNVIZ)'
-        kqml_message = start_msg + middle_msg + end_msg
+        kqml_message = start_msg + middle_msg + end_msg*/
 
-		fs.appendFile('sb_log.txt', 'MOO there', (err) => {
-		});
+		//fs.appendFile('sb_log.txt', 'MOO there', (err) => {
+		//});
 
         //this.tripsModule.sendMsg(kqml_message)
     }
