@@ -13,7 +13,6 @@ let TripsInterfaceModule = require('./TripsInterfaceModule.js');
 class TripsGeneralInterfaceModule extends TripsInterfaceModule {
 
     constructor(agentId, agentName, socket, model, askHuman){
-
         super('Sbgnviz-Interface-Agent', agentId, agentName, socket, model);
 
         let self = this;
@@ -223,12 +222,16 @@ class TripsGeneralInterfaceModule extends TripsInterfaceModule {
     }
 
     sendModelToTrips(biopaxModel){
-        start_msg = '(REQUEST :CONTENT (BUILD-MODEL :DESCRIPTION "'
+        console.log('KQML MESSAGE MOO:')
+        start_msg = '(REQUEST :CONTENT (REPLACE-MODEL :DESCRIPTION "'
         middle_msg = biopaxModel.replace('"', "\\" + '"')
-        end_msg = '") :REPLY-WITH BUILD-MODEL-307 :sender SBGNVIZ)'
+        end_msg = '") :sender SBGNVIZ)'
         kqml_message = start_msg + middle_msg + end_msg
 
-        this.tripsModule.sendMsg(kqml_message)
+		fs.appendFile('sb_log.txt', 'MOO there', (err) => {
+		});
+
+        //this.tripsModule.sendMsg(kqml_message)
     }
 
 

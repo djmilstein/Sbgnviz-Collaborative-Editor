@@ -977,7 +977,6 @@ module.exports.start = function(io, model, cancerDataOrganizer){
         });
 
         socket.on('BioPAXRequest', function(fileContent, reqType, callback){
-
             request({
                 url: "http://causalpath.org:8080/paxtools/PaxtoolsServlet",
                 // url: "http://localhost:8080/paxtools/PaxtoolsServlet",
